@@ -53,7 +53,8 @@ void loop() {
     strip.setPixelColor(i, backgroundColor);
   }
 
-  strip.setPixelColor(map(input, 0, 1023, 0, numberOfPixels-1), movingPixelColor);
+  int position = map(input, 0, 1023, 0, numberOfPixels-1);
+  strip.setPixelColor(position, movingPixelColor);
 
   strip.show();
 }
