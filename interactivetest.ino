@@ -1,6 +1,18 @@
+//=========================================================================
+//
+// InteractiveTest -- An interactive test of the Adafruit 12mm pixel strip
+// by John Wilson (@crazybutable, http://www.crazybutable.com/)
+// uses a helper function and a few lines of code from strandTest, the
+// default Adafruit pixel strand test code.
+//
+//=========================================================================
+
 #include "SPI.h"
 #include "Adafruit_WS2801.h"
 
+// This code is only going to work with the 12mm pixel strands. If you
+// have other pixel strands, look at the Adafruit strandTest code 
+// for ideas on what you will need to change.
 
 // Choose which 2 pins you will use for output.
 // Can be any valid output pins.
@@ -19,6 +31,8 @@ const int numberOfPixels = 25;
 const int inputPin = A0;
 
 Adafruit_WS2801 strip = Adafruit_WS2801(numberOfPixels, dataPin, clockPin);
+
+// These are our background and foreground colors.
 
 uint32_t backgroundColor = Color(0, 255, 255);
 uint32_t movingPixelColor = Color(255, 0, 0);
